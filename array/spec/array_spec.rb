@@ -80,26 +80,5 @@ describe Array do
 
   end
 
-  discribe '#stock_picker' do
-    subject (:stock_high_start) {[100, 20 , 30 ]}
-    lets (:stock_low_start) {[20, 100 , 30 ]}
-    let (:stock_descending) {[100, 80, 70, 0]}
-    let (:stock_even) {[20, 20, 20, 20]}
-
-    it "can't sell stock before you buy it" do
-      expect( :stock_high_start.stock_picker[1] ).to_not eq(100)
-    end
-
-    it "returns an empty array when there's no profit"
-
-    it "does not lose money"
-
-    it "returns an array of length 2"
-
-    it "retruns in prober order of days"
-
-    it "it is the most profitable"
-
-  end
-
+  
 end
