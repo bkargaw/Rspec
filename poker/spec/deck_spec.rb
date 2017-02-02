@@ -1,10 +1,8 @@
 require 'deck'
 
 describe Deck do
-
+  subject(:deck) { Deck.new }
   describe '#initialize' do
-    subject(:deck) { Deck.new }
-
     it 'initializes an array of fifty two cards' do
       expect(deck.cards.length).to eq(52)
     end
@@ -28,8 +26,31 @@ describe Deck do
     end
   end
 
-# shuffle
+  describe '#get_top_card' do
+    it 'returns the top card in the cards instance variable' do
+      top_card = deck.cards.last
+      expect(deck.get_top_card).to be(top_card)
+    end
+
+    it 'it removes the card that was given to the player' do
+      deck.get_top_card
+      expect(deck.cards.length).to be(51)
+    end
+    context 'when it deals all of the cards away' do
+      before(:each) do
+        52.times{deck.get_top_card}
+      end
+      it 're-populates cards in the deck' do
+        expect(deck.cards.length).to eq(52)
+      end
+
+    end
+
+
+  end
+
 # get_top_card
-# rest_card
+# rest_cards
+# get_new _set
 
 end

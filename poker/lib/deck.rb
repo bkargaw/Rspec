@@ -12,6 +12,16 @@ class Deck
     @cards = populate
   end
 
+  def shuffle!
+    @cards.shuffle!
+  end
+
+  def get_top_card
+    card = @cards.pop
+    @cards = populate if cards.empty?
+    card
+  end
+
   private
   def populate
     cards = []
@@ -25,8 +35,5 @@ class Deck
     cards
   end
 
+
 end
-
-
-
-# populate
