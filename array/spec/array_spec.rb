@@ -27,7 +27,8 @@ describe Array do
 
       it "returns an array of arrays with length of two" do
         expect( nums.two_sum[0].length ).to eq(2)
-        expect( nums.two_sum.select { |el| el.length != 2 } ).to be_empty
+        # expect( nums.two_sum.select { |el| el.length != 2 } ).to be_empty
+        nums.two_sum.all? { |pair| expect(pair.length).to eq(2) }
       end
 
       it "return indices and not values" do
@@ -77,8 +78,5 @@ describe Array do
         two_D_array.my_transpose
       end
     end
-
   end
-
-  
 end

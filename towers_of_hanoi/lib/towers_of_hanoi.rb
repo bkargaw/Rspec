@@ -33,7 +33,7 @@ class TowersOfHanoi
 
   def run_turn
     start, finish = get_move
-    move(start, finish)
+    move(start, finish  )
   rescue
     puts "Invalid input"
     retry

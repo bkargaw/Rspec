@@ -30,7 +30,6 @@ describe "TowersOfHanoi" do
 
     it 'raises an error if you select an empty start tower' do
       expect{ hanoi.move(1, 2) }.to raise_error("Invalid start position")
-      # expect{ hanoi.move(1, 2) }.to raise_error(ArgumentError)
     end
 
     it 'raises an error if you select outside of the tower indices' do
