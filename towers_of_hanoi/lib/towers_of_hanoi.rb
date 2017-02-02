@@ -18,4 +18,10 @@ class TowersOfHanoi
 
     towers[finish] << towers[start].pop
   end
+
+  def won?
+    return true if towers[1].length == 3 || towers[2].length == 3
+    false
+  end
+
 end

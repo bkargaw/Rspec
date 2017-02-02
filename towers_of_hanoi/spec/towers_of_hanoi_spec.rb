@@ -58,17 +58,19 @@ describe "TowersOfHanoi" do
   describe '#won?' do
     let (:winner) {TowersOfHanoi.new}
     let (:loser) {TowersOfHanoi.new}
-    before(:each) {winner.towers = [[],[],[]]}
+    before(:each) {winner.towers = [[],[],[3,2,1]]}
+    before(:each) {loser.towers = [[],[1],[3,2]]}
 
-    it 'two of the towers are empty' do
-
+    it 'checks first is not the winning tower' do
+      expect(hanoi.won?).to be(false)
     end
 
-    it 'checks first is not the winning tower'
+    it 'returns true if a winning tower exists' do
+      expect(winner.won?).to be(true)
+    end
 
-    it 'returns true if a winning tower exists'
-
-    it 'returns false if no winning tower'
-
-
+    it 'returns false if no winning tower' do
+      expect(loser.won?).to be(false)
+    end
+  end
 end
